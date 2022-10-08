@@ -47,32 +47,32 @@ public class PokeController {
         return restTemplate.exchange(getURI(pokemonName), HttpMethod.GET, entity, Pokemon.class).getBody();
     }
 
-    @GetMapping("/id/{pokemon}")
+    @GetMapping("id/{pokemon}")
     public ResponseEntity<Object> getPokemonId(@PathVariable("pokemon") String pokemonName) {
         return ResponseEntity.ok().body(createHashMap("id", getPokemon(pokemonName).getId()));
     }
 
-    @GetMapping("/name/{pokemon}")
+    @GetMapping("name/{pokemon}")
     public ResponseEntity<Object> getPokemonName(@PathVariable("pokemon") String pokemonName) {
         return ResponseEntity.ok().body(createHashMap("name", getPokemon(pokemonName).getName()));
     }
 
-    @GetMapping("/base_experience/{pokemon}")
+    @GetMapping("base_experience/{pokemon}")
     public ResponseEntity<Object> getPokemonBaseExperience(@PathVariable("pokemon") String pokemonName) {
         return ResponseEntity.ok().body(createHashMap("base_experience", getPokemon(pokemonName).getBaseExperience()));
     }
 
-    @GetMapping("/abilities/{pokemon}")
+    @GetMapping("abilities/{pokemon}")
     public ResponseEntity<Object> getPokemonAbilities(@PathVariable("pokemon") String pokemonName) {
         return ResponseEntity.ok().body(createHashMap("abilities", getPokemon(pokemonName).getAbilities()));
     }
 
-    @GetMapping("/held_items/{pokemon}")
+    @GetMapping("held_items/{pokemon}")
     public ResponseEntity<Object> getPokemonHeldItems(@PathVariable("pokemon") String pokemonName) {
         return ResponseEntity.ok().body(createHashMap("held_items", getPokemon(pokemonName).getHeldItems()));
     }
 
-    @GetMapping("/location_area_encounters/{pokemon}")
+    @GetMapping("location_area_encounters/{pokemon}")
     public ResponseEntity<Object> getpokemonLocationArea(@PathVariable("pokemon") String pokemonName) {
         return ResponseEntity.ok().body(createHashMap("location_area_encounters", getPokemon(pokemonName).getLocationAreaEncounters()));
     }
